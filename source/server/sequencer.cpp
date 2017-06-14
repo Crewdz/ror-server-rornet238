@@ -25,6 +25,7 @@ along with Foobar. If not, see <http://www.gnu.org/licenses/>.
 #include "listener.h"
 #include "receiver.h"
 #include "broadcaster.h"
+#include "notifier.h"
 #include "userauth.h"
 #include "SocketW.h"
 #include "logger.h"
@@ -125,6 +126,7 @@ void* LaunchKillerThread(void* data)
 Sequencer::Sequencer():
     m_listener(nullptr),
     m_script_engine(nullptr),
+	m_notifier(this),
     m_auth_resolver(nullptr),
     m_bot_count(0),
     m_free_user_id(1)
@@ -149,6 +151,12 @@ void Sequencer::Initialize(Listener* listener)
 #endif //WITH_ANGELSCRIPT
 
     pthread_create(&m_killer_thread, NULL, LaunchKillerThread, this);
+    m_notifier.activate();
+}
+
+void Sequencer::ActivateUserAuth()
+{
+    m_auth_resolver = new UserAuth(m_notifier.getChallenge(), m_notifier.getTrustLevel(), Config::getAuthFile());
 }
 
 /**

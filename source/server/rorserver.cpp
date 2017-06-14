@@ -336,6 +336,7 @@ int main(int argc, char* argv[])
             Logger::Log(LOG_INFO, "Registration successful");
         }
     }
+	s_sequencer.ActivateUserAuth();
 
 #ifdef WITH_WEBSERVER
     // start webserver if used
