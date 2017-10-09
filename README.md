@@ -1,9 +1,4 @@
-# Rigs of Rods Server 
-
-|  Build status 	|                                                                                                                                                                             	|
-|---------------	|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| Linux:        	| [![travis build Status](https://img.shields.io/travis/RigsOfRods/ror-server.svg?style=flat-square)](https://travis-ci.org/RigsOfRods/ror-server)                            	|
-| Windows:      	| [![appveyor build Status](https://img.shields.io/appveyor/ci/AnotherFoxGuy/ror-server.svg?style=flat-square)](https://ci.appveyor.com/project/AnotherFoxGuy/ror-server)    	|
+# Rigs of Rods server client for 0.4.7.0 (RoRNet 2.38)
 
 ## DESCRIPTION
 
